@@ -18,6 +18,7 @@ parentsElement.appendChild(articleElement);
 let tablecookies = document.getElementById("myTable");
 articleElement.appendChild(tablecookies);
 
+let locationForm = document.getElementById("form");
 
 let locations =[]; 
 
@@ -88,46 +89,74 @@ function headertable () {
 
     };
 
-    function footertable () {
-      let tablerow = document.createElement('tr');
-      tablecookies.appendChild(tablerow);
-      
-
-     let td  = document.createElement('td');
-    tablerow.appendChild(td);
-    td.textContent = ' hourly total';
-    let hourlytotal=0;
-      for (let i = 0 ; i < hourworks.length  ; i++){
-       let totaloftotal = 0 ;
-        for(let j=0 ; j< locations.length ; j++){
-
-          totaloftotal += locations[j].cookiesPH[i];
-        
-          hourlytotal +=  totaloftotal;
-      }
-      let th5 = document.createElement('th');
-      tablerow.appendChild(th5);
-      th5.textContent= totaloftotal;
-
-        }
-        
-        let th4 = document.createElement('th');
-         tablerow.appendChild(th4);
-      th4.textContent = hourlytotal;
-      };
-      
+    
     
     headertable();
 
+    let Seattle = new Shopelocation('seattle', 23, 65, 6.3);
+    let Tokyo = new Shopelocation('Tokyo', 3, 24, 1.2);
+    let Dubai = new Shopelocation('Dubai', 11, 38, 3.7);
+    let Paris = new Shopelocation('Paris ', 20, 38, 2.3);
+    let Lima = new Shopelocation('Lima', 2, 16, 4.6);
+    
 
 
-let Seattle = new Shopelocation('seattle', 23, 65, 6.3);
-let Tokyo = new Shopelocation('Tokyo', 3, 24, 1.2);
-let Dubai = new Shopelocation('Dubai', 11, 38, 3.7);
-let Paris = new Shopelocation('Paris ', 20, 38, 2.3);
-let Lima = new Shopelocation('Lima', 2, 16, 4.6);
+  
+ 
+  
+  
+function footertable () {
+  let tablerow = document.createElement('tr');
+  tablecookies.appendChild(tablerow);
+  
+
+ let td  = document.createElement('td');
+tablerow.appendChild(td);
+td.textContent = ' hourly total';
+let hourlytotal=0;
+  for (let i = 0 ; i < hourworks.length  ; i++){
+   let totaloftotal = 0 ;
+    for(let j=0 ; j< locations.length ; j++){
+
+      totaloftotal += locations[j].cookiesPH[i];
+    
+      hourlytotal +=  totaloftotal;
+  }
+  let th5 = document.createElement('th');
+  tablerow.appendChild(th5);
+  th5.textContent= totaloftotal;
+
+    }
+  
+  let th4 = document.createElement('th');
+  tablerow.appendChild(th4);
+th4.textContent = hourlytotal;
+};
 
 
+
+
+ 
+function addlocation (event){
+  event.preventDefault();
+  let location = event.target.location.value;
+  let mincustomer = event.target.mincustomer.value;
+  let maxcustomer = event.target.maxcustomer.value;
+  let avgcookies= event.target.avgcookies.value;
+ 
+  let newlocation = new Shopelocation (location , mincustomer,maxcustomer ,avgcookies);
+  tablecookies.deleteRow(locations.length);
+  newlocation.getCustomer();
+  newlocation.render();
+ 
+  console.log(newlocation);
+  
+  
+  footertable();
+
+};
+
+ locationForm.addEventListener('submit', addlocation);
 
 Seattle.getCustomer();
 Tokyo.getCustomer();
@@ -142,8 +171,8 @@ Dubai.render();
 Paris.render();
 Lima.render();
 
-footertable();
 
-console.log("after", locations);
+
+footertable();
 
 
