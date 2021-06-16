@@ -11,37 +11,86 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">Home</a><br>
+            <img id="salmon" src="img/salmon.png" alt="The Pulpit Rock">
+
+            <a href="index.html">Home</a>
             <a href="">about us</a>
-                    </nav>
+            <button onclick="myFunction()">click</button>
+        </nav>
+
         <h1 id="title"> Salmon Cookies</h1>
-        <button onclick="myFunction()">click</button>
-       
-        
-          
+
     </header>
-        <main>
-            <br>
-            <br>
-    
+    <main>
 
-        </main>
-        <div id ="cookies" style="padding: 20px;" >
-            <table id="myTable">
-            
-            </table>
-                        </div>
+        <section>
 
-                        <div id="class"> <li><img id="img1" src="img/salmon.png" alt="The Pulpit Rock" width="400px" height="300px" style="border:5px solid black"></li>
-                            <li><img id="img3" src="img/chinook.jpg" alt="The Pulpit Rock" width="400px" height="300px" style="border:5px solid black"></li>
-                            <li><img id="img4" src="img/fish.jpg" alt="The Pulpit Rock" width="400px" height="300px" style="border:5px solid black"></li> 
-                        </div>
-        <script src="cookies.js"></script>
-        <footer>
-            
-           
-            
-        </footer> 
+
+            <fieldset>
+
+                <form id="form">
+                    <h1>Add new location</h1> <br>
+                    <li><label for="location">The shope location</label>
+                        <input type="text" name="location" id="shopelocation" placeholder="ex: Amman">
+                    </li>
+                    <li><label for="mincustomer">The minimum number of customers per hour.</label><br>
+                        <input type="text" name="mincustomer" id="mincustomer" placeholder="ex: 4">
+                    </li>
+                    <li> <label for="maxcustomer">The maximum number of customers per hour.</label><br>
+                        <input type="text" name="maxcustomer" id="maxcustomer" placeholder=" ex: 24">
+                    </li>
+                    <li><label for="avgcookies">The average number of cookies purchased per customer.</label><br>
+                        <input type="text" name="avgcookies" id="avgcookies" placeholder=" ex:  12.7">
+                    </li>
+
+
+                    <br>
+                    <button type="submit">ADD</button>
+                </form>
+
+            </fieldset>
+
+
+            <br>
+
+
+
+
+
+        </section>
+        <br>
+        <section>
+            <div id="cookies" style="padding: 20px;">
+
+
+                <table id="myTable">
+
+                </table>
+            </div>
+            <br>
+        </section>
+
+        <br>
+        <br>
+
+        <section>
+            <div id="class">
+
+                <li><img id="img3" src="img/chinook.jpg" alt="The Pulpit Rock" width="400px" height="300px"
+                        style="border:5px solid black"></li>
+                <li><img id="img4" src="img/fish.jpg" alt="The Pulpit Rock" width="400px" height="300px"
+                        style="border:5px solid black"></li>
+                <li><img id="img1" src="img/salmon.png" alt="The Pulpit Rock" width="400px" height="300px"
+                        style="border:5px solid black"></li>
+            </div>
+        </section>
+    </main>
+    <script src="cookies.js"></script>
+    <footer>
+
+
+
+    </footer>
 </body>
 
 </html>
