@@ -26,6 +26,8 @@ nav{
 nav a {
   padding: 15px 40px;
   text-align: right;
+  font-family: 'Sonsie One', cursive;
+  color: rgb(23, 23, 105);
 }
 #class{
   padding: 15px 40px;
@@ -67,7 +69,8 @@ nav a {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
-    color:cornflowerblue;
+    color:rgb(3, 10, 97);
+    font-family: 'Mystery Quest', cursive;
   }
   body {
     background: lightblue  no-repeat fixed center;
@@ -83,6 +86,7 @@ nav a {
   }
   table, td , th  {
     border: 6px solid #3d566b;
+    background-color: azure;
   }
   .location{
     background-color: lightcoral;
@@ -107,5 +111,10 @@ nav a {
       align-items:center ;}
   form h1 {
     font-style: oblique;
-    color:black;
+    color:rgb(3, 10, 97);
+  }
+  form li {
+    font-family: Georgia;
+    color: 29, 80, 80;
+
   }
